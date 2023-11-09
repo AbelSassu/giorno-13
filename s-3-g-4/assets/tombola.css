@@ -1,11 +1,26 @@
 body{
-    background-image: url('https://media-assets.wired.it/photos/629db90a7aae1fd7fb7ec23a/1:1/w_1500,h_1500,c_limit/81U6o32LuUL._AC_SL1500_.jpg')
-    }
+    background-image: url('https://media-assets.wired.it/photos/629db90a7aae1fd7fb7ec23a/1:1/w_1500,h_1500,c_limit/81U6o32LuUL._AC_SL1500_.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+h1{
+    font-weight: 1000;
+}
+p{
+    font-weight: 1000;
+    color: rgb(0, 0, 0);
+}
+.paragrafo{
+    position: relative;
+    left: 45em;
+    top: 8em;
+}
 .cella {
     border: 1px solid #000;
     padding: 10px;
     text-align: center;
     font-family: Arial, sans-serif;
+    background-color: green;
 }
 .tabellone {
     display: grid;
@@ -19,14 +34,13 @@ body{
     grid-template-columns: repeat(5, 5em);
 }
 .cella-giocatore {
+    display: inline;
     border: 1px solid #000;
     padding: 30px;
     text-align: center;
     font-family: Arial, sans-serif;
     margin-bottom: 2em;
-}
-.cella-giocatore.estratto {
-    background-color: yellow;
+    background-color: green;
 }
 .tabellina-giocatore {
     margin-top: 20px;
@@ -37,5 +51,9 @@ body{
     top: 1.5em;
 }
 .buttone{
+    border-radius: 10px;
    padding-right: 2em;;
+}
+.buttone:hover{
+    background-color: aqua;
 }
