@@ -45,12 +45,12 @@ function estraiNumero() {
             numeroEstratto = Math.floor(Math.random() * 90) + 1;
         } while (numeriEstratti.includes(numeroEstratto));
 
-        // Aggiungi il numero estratto all'array
+        // Aggiunge il numero estratto all'array
         numeriEstratti.push(numeroEstratto);
 
         alert("Numero estratto: " + numeroEstratto);
 
-        // Trova la cella corrispondente al numero estratto nell'array e evidenziala
+        // Trova la cella corrispondente al numero estratto nell'array e la evidenzia
         const cellaCorrispondente = celleArray.find(cella => cella.innerText == numeroEstratto);
 
         if (cellaCorrispondente) {
@@ -61,7 +61,7 @@ function estraiNumero() {
     }
 }
 
-// Aggiungi un bottone per simulare l'estrazione
+// Aggiunge un bottone per l'estrazione
 const bottoneEstrazione = document.createElement("button");
 bottoneEstrazione.innerText = "Estrai Numero";
 bottoneEstrazione.addEventListener("click", estraiNumero);
@@ -108,10 +108,11 @@ function creaTabellinaGiocatore() {
     
         celleGiocatore.forEach(cella => {
             if (parseInt(cella.innerText) === numero) {
-                cella.style.backgroundColor = 'yellow';
-                cella.classList.add('estratto'); // Aggiungi la classe "estratto"
+                cella.style.backgroundColor = 'red';
+                cella.classList.add('estratto'); // Aggiunge la classe "estratto"
             }
         });
+        controllaVittoria();
     }
 // Seleziona il bottone
 const nuovaCartellaBtn = document.getElementById('nuovaCartellaBtn');
@@ -121,6 +122,22 @@ nuovaCartellaBtn.addEventListener('click', function() {
     // Genera e aggiungi la nuova cartella giocatore
     creaTabellinaGiocatore();
 });
+
+function controllaVittoria() {
+    const giocatori = document.querySelectorAll('.tabellina-giocatore');
+
+    for (let i = 0; i < giocatori.length; i++) {
+        const celleGiocatore = giocatori[i].querySelectorAll('.cella-giocatore');
+        const tutteColorate = Array.from(celleGiocatore).every(cella => cella.classList.contains('estratto'));
+
+        if (tutteColorate) {
+            alert("AND THE WINNER IS....L'AMICIZIA!");
+            location.reload(); // Ricarica la pagina
+            return; // Esce dalla funzione per evitare alert multipli
+        }
+    }
+}
+
 creaTabellinaGiocatore();
 //Funzione per creare il tabellone
 creaTabellone();
