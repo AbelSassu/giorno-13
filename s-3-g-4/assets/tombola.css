@@ -1,0 +1,41 @@
+body{
+    background-image: url('https://media-assets.wired.it/photos/629db90a7aae1fd7fb7ec23a/1:1/w_1500,h_1500,c_limit/81U6o32LuUL._AC_SL1500_.jpg')
+    }
+.cella {
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+.tabellone {
+    display: grid;
+    grid-template-columns: repeat(10, 5em);
+}
+.cella.estratto {
+    background-color: yellow;
+}
+.riga-giocatore {
+    display: grid;
+    grid-template-columns: repeat(5, 5em);
+}
+.cella-giocatore {
+    border: 1px solid #000;
+    padding: 30px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-bottom: 2em;
+}
+.cella-giocatore.estratto {
+    background-color: yellow;
+}
+.tabellina-giocatore {
+    margin-top: 20px;
+}
+.granButtone{
+    position: relative;
+    left: 3em;
+    top: 1.5em;
+}
+.buttone{
+   padding-right: 2em;;
+}
